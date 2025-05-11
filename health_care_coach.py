@@ -398,6 +398,61 @@ def main():
         layout="wide"
     )
     
+    # 전역 스타일 설정 추가
+    st.markdown("""
+    <style>
+    /* 전체 텍스트 색상 설정 */
+    .stMarkdown, .stText, .stSelectbox, .stTextInput, .stTextArea {
+        color: #000000;
+    }
+    
+    /* 제목 스타일 */
+    h1, h2, h3, h4, h5, h6 {
+        color: #1E3A8A;
+    }
+    
+    /* 사이드바 텍스트 색상 */
+    .css-1d391kg {
+        color: #000000;
+    }
+    
+    /* 입력 필드 텍스트 색상 */
+    .stTextInput input, .stTextArea textarea {
+        color: #000000;
+    }
+    
+    /* 선택 박스 텍스트 색상 */
+    .stSelectbox div[data-baseweb="select"] {
+        color: #000000;
+    }
+    
+    /* 경고 메시지 스타일 */
+    .stAlert {
+        color: #000000;
+    }
+    
+    /* 코치 카드 스타일 유지 */
+    .coach-card {
+        border-radius: 10px;
+        padding: 20px;
+        margin-bottom: 20px;
+        color: #000000;
+    }
+    .assessment-coach {
+        background-color: #E8F4F9;
+        border-left: 5px solid #0077B6;
+    }
+    .nutrition-coach {
+        background-color: #E8F9E9;
+        border-left: 5px solid #2D6A4F;
+    }
+    .fitness-coach {
+        background-color: #F9F3E8;
+        border-left: 5px solid #D4A017;
+    }
+    </style>
+    """, unsafe_allow_html=True)
+    
     # 페이지 제목 및 설명
     st.title("🏃‍♂️🥗❤️ AI 헬스 케어 코치 팀")
     st.markdown("""
@@ -477,29 +532,6 @@ def main():
         "원하는 서비스를 선택하세요",
         ["체중 관리", "체력 향상", "식습관 개선", "건강 검진 결과 분석"]
     )
-    
-    # 카드 스타일 CSS
-    st.markdown("""
-    <style>
-    .coach-card {
-        border-radius: 10px;
-        padding: 20px;
-        margin-bottom: 20px;
-    }
-    .assessment-coach {
-        background-color: #E8F4F9;
-        border-left: 5px solid #0077B6;
-    }
-    .nutrition-coach {
-        background-color: #E8F9E9;
-        border-left: 5px solid #2D6A4F;
-    }
-    .fitness-coach {
-        background-color: #F9F3E8;
-        border-left: 5px solid #D4A017;
-    }
-    </style>
-    """, unsafe_allow_html=True)
     
     # 워크플로우 설명
     with st.expander("에이전틱 워크플로우 프로세스 보기"):
